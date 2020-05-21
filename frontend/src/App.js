@@ -4,11 +4,11 @@ import Notifications, {notify} from 'react-notify-toast'
 
 
 import Home from './components/common/Home'
-import CheeseIndex from './components/cheeses/CheeseIndex'
+import PlantIndex from './components/plants/PlantIndex'
 import Navbar from './components/common/Navbar'
-import CheeseShow from './components/cheeses/CheeseShow'
-import CheeseNew from './components/cheeses/CheeseNew'
-import CheeseEdit from './components/cheeses/CheeseEdit'
+import PlantShow from './components/plants/PlantShow'
+import PlantNew from './components/plants/PlantNew'
+import PlantEdit from './components/plants/PlantEdit' 
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Error from './components/common/Error'
@@ -20,7 +20,7 @@ import SecureRoute from './components/common/SecureRoute'
 // class App extends React.Component {
 //   async componentDidMount() {
 //     try {
-//       const res = await fetch('/api/gardenville')
+//       const res = await fetch('/api/plants')
 //       const data = await res.json()
 //       console.log(data)
 //     } catch(err) {
@@ -45,10 +45,10 @@ const App = () => {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/cheeses/:id/edit" component={CheeseEdit}/>
-        <SecureRoute path="/cheeses/new" component={CheeseNew}/>
-        <Route path="/cheeses/:id" component={CheeseShow}/>
-        <Route path="/cheeses" component={CheeseIndex} />
+        <Route path="/plants/:id/edit" component={PlantEdit}/>
+        <SecureRoute path="/plants/new" component={PlantNew}/>
+        <Route path="/plants/:id" component={PlantShow}/>
+        <Route path="/plants" component={PlantIndex} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/*" component={Error} />

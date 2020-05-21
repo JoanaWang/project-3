@@ -1,9 +1,9 @@
 import React from 'react'
-import CheeseForm from './CheeseForm'
-import { getSingleCheese, editCheese} from '../lib/api'
+import PlantForm from './PlantForm'
+import { getSinglePlant, editPlant} from '../lib/api'
 
 
-class CheeseEdit extends React.Component {
+class PlantEdit extends React.Component {
 
   state = {
     formData: {
@@ -17,10 +17,10 @@ class CheeseEdit extends React.Component {
 
 async componentDidMount() {
   
-  const cheeseId = this.props.match.params.id // get id from the url since we already have it/are there
+  const plantId = this.props.match.params.id // get id from the url since we already have it/are there
 
   try{
-const response = await getSingleCheese(cheeseId)
+const response = await getSinglePlant(plantId)
 this.setState({formData: response.data})
 console.log(response)
   } catch(err) {
@@ -42,11 +42,11 @@ console.log(response)
     console.log('ready to send the edited data', this.state.formData)
 
 
-    const cheeseId = this.props.match.params.id 
+    const plantId = this.props.match.params.id 
 
     try{
-        await editCheese(cheeseId, this.state.formData)
-        this.props.history.push(`/cheeses/${cheeseId}`) // once edited redirect to that cheese's page
+        await editPlant(plantId, this.state.formData)
+        this.props.history.push(`/plants/${plantId}`) // once edited redirect to that plant's page
     } catch(err) {
       console.log(err.response)
     }
@@ -61,11 +61,11 @@ console.log(response)
     return (
       <section className="section">
         <div className="container">
-          <CheeseForm
+          <PlantForm
             formData={this.state.formData} // This is sending pre-existing data that came from the API request
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            buttonText="Edit my Cheese"
+            buttonText="Edit my Plant"
           />
         </div>
       </section>
@@ -74,4 +74,4 @@ console.log(response)
 }
 
 
-export default CheeseEdit
+export default PlantEdit

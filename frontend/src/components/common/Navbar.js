@@ -68,8 +68,8 @@ if (this.props.location.pathname !== prevProps.location.pathname) {
             <div className={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
                 {/* class is-active will show the CSS to render the menu as if it was open clicked on */ }
               <div className="navbar-end">
-                <Link to="/cheeses" className="navbar-item">
-                  Cheeses
+                <Link to="/plants" className="navbar-item">
+                  Plants
                 </Link>
 {/* Don't need to show these if the user is logged in, so we'll switch them off when the user is logged in*/}
                 {!isAuthenticated() && <Link to="/register" className="navbar-item">
@@ -84,8 +84,8 @@ if (this.props.location.pathname !== prevProps.location.pathname) {
                 To do that conditionally, we can use a trick -> an HTML element is always TRUE therefore when we chain that condition with the isAuthenticated boolean, we create this toggle on/off depending on whether the user is logged in or not
                 */}
 
-                { isAuthenticated() && <Link to="/cheeses/new" className="navbar-item">
-                  New Cheese
+                { isAuthenticated() && <Link to="/plants/new" className="navbar-item">
+                  New Plant
                 </Link>}
                 {isAuthenticated() && <span onClick={this.handleLogout} className="navbar-item">Logout</span>} {/* Also should only show the logout button if the user is logged in*/}
 

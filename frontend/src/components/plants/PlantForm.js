@@ -1,11 +1,11 @@
 import React from 'react'
 
-const CheeseForm = ( { formData, handleChange, handleSubmit, buttonText }) => (
+const PlantForm = ( { formData, handleChange, handleSubmit, buttonText }) => (
 
 
 // If we want to console.log anythin in a dumb component, we need to use the curly brackets with explicit return so that we can print above the return, like so:
 
-// const CheeseForm = ( { formData, handleChange, handleSubmit, buttonText }) => {
+// const PlantForm = ( { formData, handleChange, handleSubmit, buttonText }) => {
 //   console.log('something')
 //   return (
 //     ...
@@ -72,4 +72,4 @@ const CheeseForm = ( { formData, handleChange, handleSubmit, buttonText }) => (
   </div>
 )
 
-export default CheeseForm
+export default PlantForm

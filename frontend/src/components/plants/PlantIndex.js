@@ -1,20 +1,20 @@
 import React from 'react'
 // import axios from 'axios' //3rd party HTTP request
-import { getAllCheeses } from '../lib/api'
+import { getAllPlants } from '../lib/api'
 
 
-import CheeseCard from './CheeseCard'
+import PlantCard from './PlantCard'
 
-class CheeseIndex extends React.Component {
+class PlantIndex extends React.Component {
   
   state = {
-    cheeses: []
+    plants: []
   }
   
   async componentDidMount() {
     try {
-      const response = await getAllCheeses()
-      this.setState({cheeses: response.data})
+      const response = await getAllPlants()
+      this.setState({plants: response.data})
     } catch (err) {
       this.props.history.push('/notfound') 
       // If something went wrong, send them to the went wrong page so at least they know something has happened and they can move on
@@ -28,8 +28,8 @@ class CheeseIndex extends React.Component {
 <section className="section">
   <div className="container">
     <div className="columns is-multiline">
-    {this.state.cheeses.map((cheese) => (
-        <CheeseCard key={cheese._id} {...cheese}/>
+    {this.state.plants.map((plant) => (
+        <PlantCard key={plant._id} {...plant}/>
       )
     )}
     </div>
@@ -40,4 +40,4 @@ class CheeseIndex extends React.Component {
   }
 }
 
-export default CheeseIndex
+export default PlantIndex

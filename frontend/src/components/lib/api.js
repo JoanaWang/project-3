@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { getToken} from '../lib/_auth'
 
-const baseUrl = 'https://cheesebored.herokuapp.com'
+const baseUrl = '/api'
 
 const withHeaders = () => {
   return {
@@ -15,26 +15,26 @@ const withHeaders = () => {
 
 
 
-export const getAllCheeses = () => {
-  return axios.get(`${baseUrl}/cheeses`)
+export const getAllPlants = () => {
+  return axios.get(`${baseUrl}/plants`)
 }
 
-export const getSingleCheese = (id) => {
-  return axios.get(`${baseUrl}/cheeses/${id}`)
+export const getSinglePlant = (id) => {
+  return axios.get(`${baseUrl}/plants/${id}`)
 }
 
-export const createCheese = (formData) => {
-  return axios.post(`${baseUrl}/cheeses`
+export const createPlant = (formData) => {
+  return axios.post(`${baseUrl}/plants`
   , formData //this is the body of the request
   , withHeaders())} // this is the header of the request with the authentication object included
 
-export const editCheese = (id, formData) => {
-  return axios.put(`${baseUrl}/cheeses/${id}`
+export const editPlant = (id, formData) => {
+  return axios.put(`${baseUrl}/plants/${id}`
   , formData
   , withHeaders())} 
 
-export const deleteCheese = (id) => {
-  return axios.delete(`${baseUrl}/cheeses/${id}`,
+export const deletePlant = (id) => {
+  return axios.delete(`${baseUrl}/plants/${id}`,
   withHeaders())
 }
 

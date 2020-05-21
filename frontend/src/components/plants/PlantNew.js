@@ -1,10 +1,10 @@
 import React from 'react'
 
-import {createCheese} from '../lib/api'
+import {createPlant} from '../lib/api'
 import { toast } from '../lib/notifications'
-import CheeseForm from './CheeseForm'
+import PlantForm from './PlantForm'
 
-class CheeseNew extends React.Component {
+class PlantNew extends React.Component {
   
   state = {
     formData: {
@@ -28,10 +28,10 @@ class CheeseNew extends React.Component {
     console.log('submitting')  
 
     try {
-      const response = await createCheese(this.state.formData)
+      const response = await createPlant(this.state.formData)
 
-      toast('Well done, cheese created!')
-      this.props.history.push(`/cheeses/${response.data._id}`) // Send the user straight to the new cheese page based on the id that we got from the request response
+      toast('Well done, plant created!')
+      this.props.history.push(`/plants/${response.data._id}`) // Send the user straight to the new plant page based on the id that we got from the request response
 
     } catch(err) {
       console.log(err) 
@@ -48,11 +48,11 @@ class CheeseNew extends React.Component {
     return(
       <section className="section">
         <div className="container">
-          <CheeseForm
+          <PlantForm
             formData={this.state.formData}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            buttonText="Make my Cheese" // Can send different text to the button depending on what I want to use the form for (create or edit)
+            buttonText="Make my Plant" // Can send different text to the button depending on what I want to use the form for (create or edit)
           />
         </div>
       </section>
@@ -62,4 +62,4 @@ class CheeseNew extends React.Component {
   }
 }
 
-export default CheeseNew
+export default PlantNew

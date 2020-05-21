@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CheeseCard = ({ name, image, origin, _id}) => (
+const PlantCard = ({ name, image, origin, _id}) => (
   <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-    <Link to={`/cheeses/${_id}`}>
+    <Link to={`/plants/${_id}`}>
     <div className="card">
       <div className="card-header">
         <h4 className="card-header-title">{name}</h4>
@@ -20,4 +20,4 @@ const CheeseCard = ({ name, image, origin, _id}) => (
     </Link>
   </div> 
 )
-export default CheeseCard
+export default PlantCard
