@@ -10,7 +10,10 @@ const commentSchema = new mongoose.Schema({
 const plantSchema = new mongoose.Schema({
   plantName: { type: String, required: true, unique: true },
   image: { type: String, required: true },
-  description: { type: String, required: true, maxlength: 500 }
+  description: { type: String, required: true, maxlength: 500 },
+  water: { type: Number, required: true },
+  sun: { type: Number, required: true },
+  container: { type: String, required: true }
   // comments: [commentSchema], 
   // user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
